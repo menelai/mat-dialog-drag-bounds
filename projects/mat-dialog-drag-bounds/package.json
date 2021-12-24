@@ -1,0 +1,29 @@
+{
+  "name": "@kovalenko/mat-dialog-drag-bounds",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": ">=13",
+    "@angular/core": ">=13",
+    "@angular/material": ">=13"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/menelai/mat-dialog-drag-bounds.git"
+  },
+  "keywords": [
+    "angular",
+    "material",
+    "dialog",
+    "drag",
+    "bounds",
+    "cdk"
+  ],
+  "author": "Kovalenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/menelai/mat-dialog-drag-bounds/issues"
+  }
+}

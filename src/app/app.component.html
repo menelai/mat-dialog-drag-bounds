@@ -1,0 +1,11 @@
+<a (click)="launchDialog()">Launch Dialog</a>
+
+<ng-template #dialogTpl>
+  <div mat-dialog-title cdkDrag cdkDragRootElement=".cdk-overlay-pane" cdkDragHandle cdkDragBoundary=".cdk-global-overlay-wrapper" [ngcMatDialogDragBounds]="24">Drag me</div>
+  <mat-dialog-content>
+    Text
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button (click)="close()" mat-button type="button">Close</button>
+  </mat-dialog-actions>
+</ng-template>
