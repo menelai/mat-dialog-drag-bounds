@@ -4,12 +4,17 @@ import {AfterViewInit, Directive, DoCheck, ElementRef, Input, NgZone} from '@ang
   selector: '[cdkDrag][cdkDragHandle][cdkDragBoundary][ngcMatDialogDragBounds]'
 })
 export class MatDialogDragBoundsDirective implements AfterViewInit, DoCheck {
-  @Input() ngcMatDialogDragBounds = 16;
+  @Input() set ngcMatDialogDragBounds(v: number | string) {
+    if (typeof v === 'number' || !isNaN(parseInt(v))) {
+      this.treshold = Number(v);
+    }
+  }
 
   private overlayWrapper?: HTMLElement;
   private dialog?: HTMLElement;
   private w?: number;
   private h?: number;
+  private treshold = 16;
 
   constructor(
     private elementRef: ElementRef,
@@ -37,8 +42,8 @@ export class MatDialogDragBoundsDirective implements AfterViewInit, DoCheck {
 
   private style(): void {
     const positionInfo = this.dialog!.getBoundingClientRect();
-    const x = Math.round(positionInfo.width) - this.ngcMatDialogDragBounds;
-    const y = Math.round(positionInfo.height) - this.ngcMatDialogDragBounds;
+    const x = Math.round(positionInfo.width) - this.treshold;
+    const y = Math.round(positionInfo.height) - this.treshold;
     this.overlayWrapper!.style.left = `-${x}px`;
     this.overlayWrapper!.style.right = `-${x}px`;
     this.overlayWrapper!.style.bottom = `-${y}px`;
