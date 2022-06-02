@@ -1,27 +1,51 @@
-# MaterialDialogDragBoundsDemo
+# Material Dialog Drag Bounds
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+This module provides a directive that prevents material dialog to be dragged beyond the viewport bounds.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
+npm install @kovalenko/mat-dialog-drag-bounds
+```
 
-## Code scaffolding
+## Usage
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+First, import the MatDialogDragBoundsModule to your module:
 
-## Build
+```typescript
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {MatDialogDragBoundsModule} from '@kovalenko/mat-dialog-drag-bounds';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {DialogComponent} from './app';
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+@NgModule({
+  imports: [BrowserModule, MatDialogDragBoundsModule],
+  declarations: [DialogComponent],
+  bootstrap: [DialogComponent],
+})
+export class AppModule { }
 
-## Running unit tests
+platformBrowserDynamic().bootstrapModule(DialogComponent);
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Then put all the directives inside the mat-dialog-header tag:
+```typescript
+import {Component} from '@angular/core';
 
-## Running end-to-end tests
+@Component({
+  template: `
+  <div mat-dialog-title cdkDrag cdkDragRootElement=".cdk-overlay-pane" cdkDragHandle cdkDragBoundary=".cdk-global-overlay-wrapper" ngcMatDialogDragBounds>
+    Dialog title
+  </div>
+  <mat-dialog-content>
+    Dialog content
+  </mat-dialog-content>
+`
+})
+export class DialogComponent { }
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## License
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+[MIT](LICENSE)
