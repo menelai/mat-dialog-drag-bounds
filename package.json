@@ -1,5 +1,5 @@
 {
-  "name": "material-dialog-drag-bounds-demo",
+  "name": "material-dialog-drag-bounds",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -10,8 +10,9 @@
     "lint": "ng lint",
     "start:app": "wait-on dist/mat-dialog-drag-bounds/fesm2015 && ng serve --poll 2000",
     "watch:lib": "ng build mat-dialog-drag-bounds --watch",
-    "lib:prod": "cd projects/mat-dialog-drag-bounds && npm --no-git-tag-version version patch && ng build mat-dialog-drag-bounds --configuration production",
-    "lib:publish": "cd dist/mat-dialog-drag-bounds && npm publish --access=public"
+    "lib:prod": "ng build mat-dialog-drag-bounds --configuration production",
+    "pack": "copyfiles LICENSE README.md CHANGELOG.md dist/mat-dialog-drag-bounds",
+    "semantic-release": "semantic-release"
   },
   "private": true,
   "dependencies": {
@@ -52,6 +53,14 @@
     "karma-jasmine-html-reporter": "~1.7.0",
     "ng-packagr": "^13.0.0",
     "typescript": "~4.5.2",
-    "wait-on": "^6.0.0"
+    "wait-on": "^6.0.0",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^8.0.4",
+    "@semantic-release/npm": "^9.0.1",
+    "semantic-release": "^19.0.2",
+    "copyfiles": "^2.4.1",
+    "rimraf": "^3.0.2"
   }
 }
