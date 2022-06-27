@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/menelai/mat-dialog-drag-bounds/compare/v1.0.0...v1.1.0) (2022-06-27)
+
+
+### Features
+
+* add styles to drag bounds ([52e6128](https://github.com/menelai/mat-dialog-drag-bounds/commit/52e61286887119acf6a58820ca139fc8c528d7ff))
+
 # 1.0.0 (2022-06-02)
 
 
