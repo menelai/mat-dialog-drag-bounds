@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/menelai/mat-dialog-drag-bounds/compare/v1.1.0...v1.1.1) (2024-02-02)
+
+
+### Bug Fixes
+
+* horizontal padding ([bd3e1fd](https://github.com/menelai/mat-dialog-drag-bounds/commit/bd3e1fde759da7a045d6430adc17b4e37b298c5a))
+
 # [1.1.0](https://github.com/menelai/mat-dialog-drag-bounds/compare/v1.0.0...v1.1.0) (2022-06-27)
 
 
