@@ -45,7 +45,9 @@ export class MatDialogDragBoundsDirective implements AfterViewInit, DoCheck {
     const x = Math.round(positionInfo.width) - this.treshold;
     const y = Math.round(positionInfo.height) - this.treshold;
     this.overlayWrapper!.style.left = `-${x}px`;
+    this.overlayWrapper!.style.paddingLeft = `${x}px`;
     this.overlayWrapper!.style.right = `-${x}px`;
+    this.overlayWrapper!.style.paddingRight = `${x}px`;
     this.overlayWrapper!.style.bottom = `-${y}px`;
     this.overlayWrapper!.style.paddingBottom = `${y}px`;
     this.overlayWrapper!.style.width = `auto`;
